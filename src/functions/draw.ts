@@ -9,7 +9,6 @@ export const draw = (p5: p5) => {
       workedOn.push(remove_last);
       if (!remove_last._has_neighbors) {
         const [A, B] = remove_last.createNeighbors();
-
         if (!check_dis([...workedOn, ...toothpicks], A, p5, "A"))
           toothpicks.push(A);
         if (!check_dis([...workedOn, ...toothpicks], B, p5, "B"))
@@ -19,7 +18,7 @@ export const draw = (p5: p5) => {
     if (workedOn.length > 0)
       workedOn.forEach((t, i) => {
         const color = p5.constrain(i * 0.12, 1, 255);
-        t?.show(p5, color as number);
+        t?.show(p5, color);
       });
   }
 };
